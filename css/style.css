@@ -1,0 +1,173 @@
+body::after {
+    content: "mobile";
+    font-size: 0;    
+}
+
+@media (min-width: 740px) {
+    body::after {
+        content: "desktop";
+        font-size: 0;
+    }
+}
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
+    font-family: "Roboto";
+}
+
+header {
+    background-color: #2a5f79;
+    width: 100%;
+    height: 60px;
+    position: fixed;
+    z-index: 2px;
+}
+
+header #cabecalho {
+    width: 310px;
+    height: 60px;
+    margin: 0 auto;
+}
+
+@media (min-width: 520px) {
+    header, header #cabecalho {
+        height: 35px;
+    }
+}
+
+@media (min-width: 520px) {
+    header #cabecalho {
+        width: 480px;
+    }
+}
+
+@media (min-width: 740px) {
+    header #cabecalho {
+        width: 720px;            
+    }
+}
+
+header #cabecalho #botao-menu-mobile {
+    background: url(../img/menu_sandwich.png) no-repeat;
+    background-size: cover;
+    width: 50px;
+    height: 50px;
+    margin-top: 5px;
+    cursor: pointer;
+    float: left;
+}
+
+@media (min-width: 520px) {
+    header #cabecalho #botao-menu-mobile {
+        width: 30px;
+        height: 30px;
+        margin-top: 2px;
+    }
+}
+
+@media (min-width: 740px) {
+    header #cabecalho #botao-menu-mobile {
+        display: none;
+    }
+}
+
+header #cabecalho #menu-navegacao {
+    display: none;
+}
+
+@media (min-width: 740px) {
+    header #cabecalho #menu-navegacao {
+        display: inline-block;
+        width: 420px;
+        height: 40px;
+        margin-left: 20px;                
+    }
+}
+
+header #cabecalho #menu-navegacao ul {    
+    list-style-type: none;
+    float: left;
+}
+
+header #cabecalho #menu-navegacao ul li {
+    display: inline-block;
+}
+
+header #cabecalho #menu-navegacao ul li a {
+    display: inline-block;    
+    border: 1px solid #557bc9;
+    width: 100px;
+    color: white;
+    font-family: roboto;
+    text-align: center;
+    border-radius: 2px;
+    padding: 7px 0px;    
+}
+
+header #cabecalho #menu-navegacao ul li a:hover {
+    background-color: rgba(85, 123, 201, 0.2);
+    color: white;
+}
+
+.painel-mobile {    
+    background-color: #141619;    
+    height: 100%;
+    padding: 5px;
+    position: fixed;        
+    transition: width .2s;
+    z-index: 2;
+}
+
+.box-menu-mobile {
+    display: none;
+    width: 0px;
+}
+
+.box-menu-mobile-ativo {
+    display: inline-block;
+    width: 200px;
+}
+
+.box-menu-mobile-ativo #menu-mobile li {    
+    margin-bottom: 5px;
+}
+
+.box-menu-mobile-ativo #menu-mobile li a {
+    display: block;
+    width: 160px;
+    background-color: #ebebeb;
+    border-bottom: 2px solid #868686;
+    color: black;
+    padding: 20px;
+    text-align: center;
+}
+
+.box-menu-mobile-ativo #menu-mobile li a:active {
+    background-color: #557BC9;
+    border-bottom: 2px solid #5d5d5d;
+    color: white;
+}
