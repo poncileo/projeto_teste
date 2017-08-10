@@ -55,7 +55,10 @@ $(document).ready(function(){
     }
      if( tamanhoTela.indexOf("mobile") != -1 ) {
         
-        mudarClasseMenuMobile();
+        console.log("mudou");
+        //mudarClasseMenuMobile();
         
+    } else {
+        console.log("não mudou");
     }
 });
