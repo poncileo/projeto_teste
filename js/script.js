@@ -1,64 +1,41 @@
-$(document).ready(function(){
+$(document).ready(function() {       
     var tamanhoTela = window.getComputedStyle(document.body, ':after').getPropertyValue('content');
     
-    function mudarClasseMenuMobile(box_menu) {
-    
-        var classeMenuAtivo = "box-menu-mobile-ativo";
-        var classeMenuInativo = "box-menu-mobile";
-        
-        if( $(box_menu).hasClass(classeMenuAtivo) ) {
-            $(box_menu).removeClass(classeMenuAtivo);
-            $(box_menu).addClass(classeMenuInativo);
-        } else {
-            $(box_menu).removeClass(classeMenuInativo);
-            $(box_menu).addClass(classeMenuAtivo);
-        }
-    }
-    
-    function definirExibicaoPainelMobile(painel){
-        
-        var classePainelAtivo = "js-popup-painel-ativo";
-        var classePainelInativo = "js-popup-painel";
-
-        if( $(painel).hasClass(classePainelAtivo) ) {
-            $(painel).style.display = "none";
-             $(painel).removeClass(classePainelAtivo);
-            $(painel).addClass(classePainelInativo);
-        } else {
-            $(painel).style.display = "block";
-            $(painel).removeClass(classePainelInativo);
-            $(painel).addClass(classePainelAtivo);
-        }
-    }
-    
-    function isElementoDoPainel(elemento, painel) {
+    function isPainelExibido(painel) {
         if( painel === undefined ) return;
         
-        if( $(elemento).parents( "#" + painel.id.toString() ).length > 0 ) return true;
-        
-        return false;
+        var nao_encontrado = -1;            
+        var painelExibido = ( painel.id.indexOf("-ativo") !== nao_encontrado )? true : false;
+
+        return painelExibido;
     }
     
-    function acaoBotaoMobile(painel,) {
-        $(document.body).click(function(e){
-            var elementoClicado = e.target;
+    function toggleIdPainel() {
+        var painel = $(".js-popup-painel")[0];
+        
+        var painelAtivo = "box-menu-mobile-ativo";
+        var painelInativo = "box-menu-mobile";
+
+        if( painel.id == painelAtivo ) {
+            painel.id = painelInativo;
+        } else {
+            painel.id = painelAtivo;
+        }
+    }
+    
+    function acaoBotaoMenuMobile() {
+        $(document).click(function(e){
+            var target = e.target;
             
-            if( elementoClicado != painel && isElementoDoPainel(elementoClicado, painel) ) {
-                //Evita o fechamento do painel caso o clique ocorra em um de seus elementos filho
-                elementoClicado = $(elementoClicado).parents(".painel-mobile")[0];
-            }
-            
-            if( $(elementoClicado) == ".botao-mobile-menu"  ) {
-                definirExibicaoPainelMobile(painel);
+            if( isPainelExibido(target) ) {
+                toggleIdPainel();
+            } else {
+                toggleIdPainel();
             }
         });
     }
-     if( tamanhoTela.indexOf("mobile") != -1 ) {
-        
-        console.log("mudou");
-        //mudarClasseMenuMobile();
-        
-    } else {
-        console.log("não mudou");
+    
+    if( tamanhoTela.indexOf("mobile") != -1 ) {
+        acaoBotaoMenuMobile();
     }
 });

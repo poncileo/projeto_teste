@@ -71,7 +71,7 @@ header #cabecalho {
     }
 }
 
-header #cabecalho #botao-menu-mobile {
+header #cabecalho #botao-mobile-menu {
     background: url(../img/menu_sandwich.png) no-repeat;
     background-size: cover;
     width: 50px;
@@ -82,7 +82,7 @@ header #cabecalho #botao-menu-mobile {
 }
 
 @media (min-width: 520px) {
-    header #cabecalho #botao-menu-mobile {
+    header #cabecalho #botao-mobile-menu {
         width: 30px;
         height: 30px;
         margin-top: 2px;
@@ -90,7 +90,7 @@ header #cabecalho #botao-menu-mobile {
 }
 
 @media (min-width: 740px) {
-    header #cabecalho #botao-menu-mobile {
+    header #cabecalho #botao-mobile-menu {
         display: none;
     }
 }
@@ -142,21 +142,22 @@ header #cabecalho #menu-navegacao ul li a:hover {
     z-index: 2;
 }
 
-.box-menu-mobile {
+#box-menu-mobile {
     display: none;
     width: 0px;
 }
 
-.box-menu-mobile-ativo {
-    display: inline-block;
-    width: 200px;
+#box-menu-mobile-ativo {
+    display: inline-block;    
+    width: 200px
 }
 
-.box-menu-mobile-ativo #menu-mobile li {    
+#box-menu-mobile-ativo #menu-mobile li {    
     margin-bottom: 5px;
+    list-style: none;
 }
 
-.box-menu-mobile-ativo #menu-mobile li a {
+#box-menu-mobile-ativo #menu-mobile li a {
     display: block;
     width: 160px;
     background-color: #ebebeb;
@@ -166,7 +167,7 @@ header #cabecalho #menu-navegacao ul li a:hover {
     text-align: center;
 }
 
-.box-menu-mobile-ativo #menu-mobile li a:active {
+#box-menu-mobile-ativo #menu-mobile li a:active {
     background-color: #557BC9;
     border-bottom: 2px solid #5d5d5d;
     color: white;
