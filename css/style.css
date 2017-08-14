@@ -48,12 +48,12 @@ header {
     display: flex;
     align-items: center;
     z-index: 2px;
-    padding: 5px;
+    padding: 10px;
 }
 
 .nav-scroll {
     transition: 0.5s;
-    height: 50px;
+    padding: 5px;
     
 }
 
