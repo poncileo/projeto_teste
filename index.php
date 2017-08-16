@@ -16,7 +16,10 @@
             <?php include("layout/header.php"); ?>
             <div id="box-main-content">
                 <div id="blank"></div>
-                <div id="main-content"></div>
+                <div id="main-content">
+                    <div id="home"></div>
+                    <div id="clientes"></div>
+                </div>
             </div>
             <?php include("layout/footer.php"); ?>
         </div>

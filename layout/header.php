@@ -3,8 +3,8 @@
         <div id="botao-mobile-menu"></div>
         <div id="menu-navegacao">
             <ul>
-                <li><a class="botao-menu" href="index.php">Home</a></li>
-                <li><a class="botao-menu" href="clientes.php">Clientes</a></li>
+                <li><a class="botao-menu" href="#home">Home</a></li>
+                <li><a class="botao-menu" href="#clientes">Clientes</a></li>
             </ul>
         </div>
         <div class="js-popup-painel" id="box-menu-mobile">
