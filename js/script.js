@@ -66,14 +66,19 @@ $(document).ready(function() {
     
     function mudarSecao() {
         $("ul").find("a").click(function(e) {
-            e.preventDefault();
             
-            var section = $(this).attr("href");
+            var botao_menu = $(".botao-menu");
             
-            $("html, body").animate({
-                scrollTop: $(section).offset().top
-            });
+            if( e.target === botao_menu[0] || e.target === botao_menu[1] ) {
+                
+                e.preventDefault();
             
+                var section = $(this).attr("href");
+
+                $("html, body").animate({
+                    scrollTop: $(section).offset().top
+                });
+            }            
         });
     }
 });
